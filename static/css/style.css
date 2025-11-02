@@ -1,0 +1,326 @@
+/* --- General Setup & Background --- */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #eaf2ff 0%, #ffffff 100%);
+    color: #1a202c;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 4rem 1rem;
+    box-sizing: border-box;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.content-wrapper {
+    text-align: center;
+    width: 100%;
+    max-width: 1100px;
+}
+
+/* --- Header & Home Button --- */
+.home-button {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 0.5rem 1rem;
+    border-radius: 99px; /* Full pill shape */
+    text-decoration: none;
+    color: #2d3748;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transition: all 0.2s ease;
+}
+
+.home-button:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+}
+
+/* --- Headings --- */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+}
+
+.subheading {
+    font-size: 1.25rem;
+    color: #4a5568;
+    margin-bottom: 3rem;
+}
+
+/* --- Card Container --- */
+.options-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+}
+
+/* --- Stylish AI Cards --- */
+.option-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+    width: 320px;
+    padding: 1rem;
+    box-sizing: border-box;
+    text-align: left;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eef2f9;
+}
+
+.option-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.card-image-container {
+    height: 180px;
+    border-radius: 12px;
+    overflow: hidden; /* Clips the inner image */
+    margin-bottom: 1.5rem;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* --- AI Theme Gradients & Icons --- */
+#img-paste {
+    background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#img-generate {
+    background: linear-gradient(135deg, #3a7bd5 0%, #3a6073 100%);
+    font-size: 4rem;
+}
+
+#img-import {
+    background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+    font-size: 4rem;
+}
+
+/* --- Card Text & Tags --- */
+.option-card h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0.5rem;
+}
+
+.option-card p {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.5;
+    margin: 0 0 1rem 0.5rem;
+}
+
+.card-footer {
+    padding: 0 0.5rem;
+    margin-top: 1rem;
+}
+
+.tag {
+    background-color: #f1f5f9;
+    color: #64748b;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    body {
+        padding-top: 6rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+
+    .subheading {
+        font-size: 1rem;
+    }
+    
+    .options-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .option-card {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+/* --- ADD THIS CSS TO THE END OF YOUR FILE --- */
+
+/* --- Modal Styles --- */
+.hidden {
+    display: none !important;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    text-align: left;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2.5rem;
+    color: #aaa;
+    cursor: pointer;
+    line-height: 1;
+}
+.modal-close:hover {
+    color: #333;
+}
+
+.modal-content h2 {
+    text-align: center;
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.modal-content p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content textarea,
+.modal-content input[type="text"] {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-bottom: 1.5rem;
+    resize: vertical; /* Allow textarea resize */
+}
+
+.modal-content textarea:focus,
+.modal-content input[type="text"]:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.modal-submit-btn {
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.modal-submit-btn:hover {
+    background: linear-gradient(90deg, #2980b9, #3498db);
+}
+
+/* --- Loading Spinner Styles (for #loading) --- */
+#loading {
+    margin-top: 2rem;
+}
+
+#loading p {
+    font-size: 1rem;
+    color: #7f8c8d;
+}
+#loading p:first-of-type {
+    font-size: 1.1rem;
+    color: #555;
+    font-weight: 600;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 1.5rem auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#result {
+    margin-top: 2rem;
+}
+
+#result a {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #2ecc71;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+#result a:hover {
+    background-color: #27ae60;
+}

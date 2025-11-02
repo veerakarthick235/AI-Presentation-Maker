@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-M">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create with AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="home-button">Home</a>
+    </nav>
+
+    <main>
+        <div class="content-wrapper">
+            <h1>Create with AI</h1>
+            <p class="subheading">How would you like to get started?</p>
+
+            <div class="options-container">
+
+                <a href="#" class="option-card" id="paste-card">
+                    <div class="card-image-container">
+                        <div class="card-image" id="img-paste"><span>Aa</span></div>
+                    </div>
+                    <h2>Paste in text</h2>
+                    <p>Create from notes, an outline, or existing content</p>
+                </a>
+
+                <a href="#" class="option-card" id="generate-card">
+                    <div class="card-image-container">
+                        <div class="card-image" id="img-generate"><span>✨</span></div>
+                    </div>
+                    <h2>Generate</h2>
+                    <p>Create from a one-line prompt in a few seconds</p>
+                </a>
+
+                <a href="#" class="option-card" id="import-card">
+                    <div class="card-image-container">
+                        <div class="card-image" id="img-import"><span>⬆️</span></div>
+                    </div>
+                    <h2>Import file or URL</h2>
+                    <p>Enhance existing docs, presentations, or webpages</p>
+                    <div class="card-footer">
+                        <span class="tag">LAST USED</span>
+                    </div>
+                </a>
+            </div>
+
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Generating your presentation... This may take a minute.</p>
+                <p id="loading-subtext">(Creating text and 5 audio files...)</p>
+            </div>
+            
+            <div id="result">
+                </div>
+        </div>
+    </main>
+
+    <div id="paste-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <span class="modal-close" id="paste-modal-close">&times;</span>
+            <h2>Paste your text</h2>
+            <p>Paste any text, and AI will summarize it into a presentation.</p>
+            <form id="paste-form">
+                <textarea id="paste-input" rows="10" placeholder="Paste your text here..."></textarea>
+                <button type="submit" class="modal-submit-btn">Generate from Text</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="import-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <span class="modal-close" id="import-modal-close">&times;</span>
+            <h2>Import from URL</h2>
+            <p>Paste a URL, and AI will summarize the webpage.</p>
+            <form id="import-form">
+                <input type="text" id="import-input" placeholder="https://example.com">
+                <button type="submit" class="modal-submit-btn">Generate from URL</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

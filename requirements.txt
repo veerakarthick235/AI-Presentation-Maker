@@ -1,0 +1,7 @@
+flask
+google-generativeai
+python-pptx
+gTTS
+requests
+python-dotenv
+beautifulsoup4

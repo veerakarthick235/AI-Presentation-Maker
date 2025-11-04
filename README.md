@@ -1,6 +1,6 @@
 # AI Presentation Maker (Gemini 2.5 Flash)
 
-This project generates a PowerPoint presentation (pptx), images for slides, and per-slide narration from a single input topic using **Gemini 2.5 Flash** (Google Generative AI) for text and images and **gTTS** for narration.
+This project generates a PowerPoint presentation (pptx), images for slides, and per-slide narration from a single input topic using **Google AI** for text and images and **gTTS** for narration.
 
 ## Quick start (Option 1: API Key)
 
